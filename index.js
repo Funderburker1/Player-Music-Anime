@@ -12,3 +12,84 @@ var granimInstance = new Granim({
         }
     }
 });
+
+// variasveis
+
+let music = document.querySelector('audio');
+let musicIndex = 0;
+
+let btnPlay = document.querySelector('#btn-play');
+let btnPause = document.querySelector('#btn-pause');
+let musicDuration = document.querySelector('#time-end');
+let imgMusic = document.querySelector('img');
+let musicName = document.querySelector('.description h3');
+let artistName = document.querySelector('.description p');
+let albumName = document.querySelector('.description .album p');
+let albumImg = document.querySelector('.img-album img');
+
+
+musicRender(musicIndex);
+
+document.querySelector('#btn-play').addEventListener('click', playMusic);
+document.querySelector('#btn-pause').addEventListener('click', pauseMusic);
+
+music.addEventListener('timeupdate', attBarra);
+
+document.querySelector('.arrow-left').addEventListener('click', () => {
+    musicIndex--;
+    if (musicIndex < 0) {
+        musicIndex = 2;
+    }
+    musicRender(musicIndex);
+})
+
+document.querySelector('.arrow-right').addEventListener('click', () => {
+    musicIndex++;
+    if (musicIndex > 2) {
+        musicIndex = 0;
+    }
+    musicRender(musicIndex);
+})
+
+//funçoes
+function musicRender(index) {
+    music.setAttribute('src', musics[index].file);
+    music.addEventListener('loadeddata', () => {
+        musicName.textContent = musics[index].title;
+        artistName.textContent = musics[index].artist;
+        albumName.textContent = musics[index].albumName;
+        imgMusic.src = musics[index].img;
+        albumImg.src = musics[index].albumImg;
+        musicDuration.textContent = secondsForMinutes(Math.floor(music.duration));
+        attBarra()
+        pauseMusic()
+    })
+}
+
+function playMusic() {
+    music.play();
+    document.querySelector('#btn-play').style.display = 'none';
+    document.querySelector('#btn-pause').style.display = 'block';
+}
+function pauseMusic() {
+    music.pause();
+    document.querySelector('#btn-play').style.display = 'block';
+    document.querySelector('#btn-pause').style.display = 'none';
+}
+
+function attBarra() {
+    let barra = document.querySelector('progress');
+    barra.style.width = Math.floor((music.currentTime / music.duration) * 100) + '%';
+    let decurrentTime = document.querySelector('#time-initial');
+    decurrentTime.textContent = secondsForMinutes(Math.floor(music.currentTime));
+}
+
+function secondsForMinutes(s) {
+    let boxMinutes = Math.floor(s / 60);
+    let boxSeconds = s % 60;
+    if (boxSeconds < 10) {
+        boxSeconds = '0' + boxSeconds;
+    }
+
+    return `${boxMinutes}:${boxSeconds}`
+}

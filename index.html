@@ -23,14 +23,22 @@
             <div class="description">
                 <h3>崩壊アンプリファー</h3>
                 <p>アジアのカンフー世代</p>
+                <div class="album-content">
+                    <span class="album">
+                        <p>Album</p>
+                        <div class="img-album multiple-borders2">
+                            <img src="img/asian2.jpg" alt="">
+                        </div>
+                    </span>
+                </div>
             </div>
             <div class="barraProgressContent">
-                <div class="time" id="time-right">00:00</div>
+                <div class="time" id="time-initial">00:00</div>
                 <div class="barraProgress">
                     <progress value="0" max="1"></progress>
                     <div class="ponto"></div>
                 </div>
-                <div class="time" id="time-left">00:00</div>
+                <div class="time" id="time-end">00:00</div>
             </div>
 
             <span class="row"></span>
@@ -40,13 +48,14 @@
                     <i class="fa-solid fa-shuffle"></i>
                     <span class="icons-player">
                         <i class="fa-solid fa-backward-step arrow arrow-left"></i>
-                        <i class="fa-solid fa-play btn-play"></i>
-                        <i class="fa-solid fa-pause btn-pause"></i>
+                        <i class="fa-solid fa-play btn-play" id="btn-play"></i>
+                        <i class="fa-solid fa-pause btn-pause" id="btn-pause"></i>
                         <i class="fa-solid fa-forward-step arrow arrow-right"></i>
                     </span>
                     <i class="fa-solid fa-repeat btn-repeat-on"></i>
                 </div>
             </div>
+            <audio src=""></audio>
         </section>
     </main>
     <script src="https://kit.fontawesome.com/2113f468da.js" crossorigin="anonymous"></script>
