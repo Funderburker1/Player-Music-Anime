@@ -1,0 +1,214 @@
+:root {
+    --text-shadow: 0.1em 0.1em 0.2em rgba(70, 70, 70, 0.597);
+    --box-shadow:  3px 2px 5px rgba(0, 0, 0, 0.309);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    z-index: 1;
+}
+
+.main #canvas-basic {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 5;
+}
+
+.main .playerHome {
+    position: relative;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+     /* background-color: blueviolet; */
+}
+
+.main .playerHome .img {
+    width: 140px;
+    height: 140px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.main .playerHome img {
+    width: 102%;
+    height: 101%;
+    border-radius: 50%;
+}
+
+.multiple-borders1 {
+    border-radius: 50%;
+    position: relative;
+    border: 5px solid #ffffff;
+    width: 100px;
+    height: 100px;
+    margin: 65px 0px 55px 0px;
+    box-shadow: 
+      0 0 0 10px rgba(255, 255, 255, 0.9),
+      0 0 0 10px rgba(255, 255, 255, 0.7), 
+      0 0 0 20px rgba(255, 255, 255, 0.5), 
+      0 0 0 30px rgba(255, 255, 255, 0.3),
+      0 0 0 45px rgba(255, 255, 255, 0.1);
+}
+
+
+.main .playerHome .description {
+    width: 100%;
+    margin-bottom: 4rem;
+   
+    text-align: center;
+    color: #fff;
+
+    /* background-color:red; */
+    text-shadow: var(--text-shadow);
+}
+
+.main .playerHome .description p {
+    font-size: .7rem;
+    
+}
+
+.main .playerHome .barraProgressContent {
+    /* background-color: blue; */
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main .playerHome .barraProgressContent .barraProgress {
+    width: 65%;
+    height: 1px;
+    
+    border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+
+    box-shadow: var(--box-shadow);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.main .playerHome .barraProgressContent .barraProgress progress {
+    width: 20%;
+    height: 3px;
+    
+    -webkit-appearance: none;
+}
+
+::-webkit-progress-bar {
+    background-color: rgba(255,65,149,1);
+}
+
+
+.main .playerHome .barraProgressContent .barraProgress .ponto {
+    width: 4px;
+    height: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-left: -4px;
+}
+
+.main .playerHome .barraProgressContent .time {
+    font-size: .7rem;
+    margin: 0 .5rem;
+    color: #fff;
+    /* background-color: rgb(1, 236, 72); */
+    text-shadow: var(--text-shadow);
+}
+
+.main .playerHome .row {
+    width: 100%;
+    height: 2px;
+    margin-top: 1rem;
+    
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+.playerContent {
+    width: 100%;
+    height: 100%;
+    /* background-color: blue; */
+    display: flex;
+}
+
+.main .playerHome .playerContent .player {
+    width: 100%;
+    /* margin-top:2rem; */
+    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    /* background-color: red; */
+   
+}
+
+
+.main .playerHome .player .fa-shuffle ,.fa-repeat {
+    color: rgba(255, 255, 255, 0.659);
+    text-shadow: var(--text-shadow);
+}
+
+.main .playerHome .player .icons-player {
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    /* background-color: blue; */
+    width: 35%;
+}
+
+.main .playerHome .player .btn-play, .btn-pause {
+    text-align: center;
+    width: 44px;
+    padding: .9rem 0;
+    font-size: .9rem;
+   
+    background-color: rgba(255,65,149,1);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+}
+
+.main .playerHome .arrow {
+    font-size: 1rem;
+    cursor: pointer;
+    text-shadow: var(--text-shadow);
+}
+
+.main .playerHome .player .btn-pause  {
+   display: none;
+}
+
+
+

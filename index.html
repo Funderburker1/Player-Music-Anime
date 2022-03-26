@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Music</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <main class="main">
+        <canvas id="canvas-basic"></canvas>
+        <section class="playerHome">
+            <div class="img multiple-borders1">
+                <img src="img/asian1.jpg" alt="">
+            </div>
+            <div class="description">
+                <h3>崩壊アンプリファー</h3>
+                <p>アジアのカンフー世代</p>
+            </div>
+            <div class="barraProgressContent">
+                <div class="time" id="time-right">00:00</div>
+                <div class="barraProgress">
+                    <progress value="0" max="1"></progress>
+                    <div class="ponto"></div>
+                </div>
+                <div class="time" id="time-left">00:00</div>
+            </div>
+
+            <span class="row"></span>
+
+            <div class="playerContent">
+                <div class="player">
+                    <i class="fa-solid fa-shuffle"></i>
+                    <span class="icons-player">
+                        <i class="fa-solid fa-backward-step arrow arrow-left"></i>
+                        <i class="fa-solid fa-play btn-play"></i>
+                        <i class="fa-solid fa-pause btn-pause"></i>
+                        <i class="fa-solid fa-forward-step arrow arrow-right"></i>
+                    </span>
+                    <i class="fa-solid fa-repeat btn-repeat-on"></i>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="https://kit.fontawesome.com/2113f468da.js" crossorigin="anonymous"></script>
+    <script src="granim.min.js"></script>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
