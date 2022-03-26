@@ -112,12 +112,12 @@
 }
 
 .main .playerHome .description h3 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     
 }
 
 .main .playerHome .description p {
-    font-size: .7rem;
+    font-size: 13px;
     margin-bottom: 30px;
 }
 
@@ -139,7 +139,7 @@
 }
 
 .main .playerHome .description .album p {
-    font-size: .6rem;
+    font-size: 12px;
     margin-bottom: 15px;
     text-shadow: var(--text-shadow);
 }
@@ -215,7 +215,7 @@
 }
 
 .main .playerHome .barraProgressContent .time {
-    font-size: .7rem;
+    font-size: 12px;
     margin: 0 .5rem;
     color: #fff;
     /* background-color: rgb(1, 236, 72); */
