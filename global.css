@@ -48,6 +48,26 @@
      /* background-color: blueviolet; */
 }
 
+.like {
+    z-index: 100;
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0;
+    /* background-color:red; */
+    padding: 1rem 2rem 0 2rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.like i {
+    opacity: 80%;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
 .main .playerHome .img {
     width: 140px;
     height: 140px;
