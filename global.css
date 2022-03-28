@@ -28,7 +28,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-
     z-index: 5;
 }
 
@@ -138,8 +137,6 @@
 }
 
 .main .playerHome .description .album-content .album {
-    position: relative;
-    /* height: 60px; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -151,6 +148,16 @@
     font-size: 12px;
     margin-bottom: 5px;
     text-shadow: var(--text-shadow);
+}
+
+.img-album-content {
+    position: relative;
+    width:90px;
+    /* background-color:red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
 }
 
 .main .playerHome .description .album-content .img-album {
@@ -166,21 +173,22 @@
     padding: 2px 0px 2px 6px;
 }
 
-.main .playerHome .description .album-content .album .img-album img {
+.main .playerHome .description .album-content .album .img-album-content img {
+    position: relative;
     border-radius: 0;
     width: 100%;
     height: 100%;
     z-index: 100;
+   
 }
 
-.main .playerHome .description .album-content .album .cd {
+.main .playerHome .description .album-content .album .img-album-content .cd {
     border-radius: 0;
     position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 188px;
-    bottom: 0;
+    width: 65px;
+    height: 65px;
     z-index: 50;
+    right:0;
     /* background-color:red */
 }
 

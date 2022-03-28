@@ -89,7 +89,7 @@ function secondsForMinutes(s) {
     let boxMinutes = Math.floor(s / 60);
     let boxSeconds = s % 60;
     if (boxSeconds < 10) {
-        boxSeconds = '0' + boxSeconds;
+        boxSeconds = `0${boxSeconds}`;
     }
 
     return `${boxMinutes}:${boxSeconds}`
@@ -112,14 +112,14 @@ document.querySelector('.btn-repeat-on').addEventListener('click', repetirMusica
 document.querySelector('.btn-repeat-off').addEventListener('click', repetirMusicaOFF);
 
 function repetirMusicaON() {
-    musics.loop = true;
+    music.loop = true;
     document.querySelector('.btn-repeat-on').style.display = 'none';
     document.querySelector('.btn-repeat-off').style.display = 'block';
 
 }
 
 function repetirMusicaOFF() {
-    musics.loop = false;
+    music.loop = false;
     document.querySelector('.btn-repeat-on').style.display = 'block';
     document.querySelector('.btn-repeat-off').style.display = 'none';
 }
