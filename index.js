@@ -30,6 +30,7 @@ let albumImg = document.querySelector('.img-album img');
 
 musicRender(musicIndex);
 
+
 document.querySelector('#btn-play').addEventListener('click', playMusic);
 document.querySelector('#btn-pause').addEventListener('click', pauseMusic);
 
@@ -93,3 +94,47 @@ function secondsForMinutes(s) {
 
     return `${boxMinutes}:${boxSeconds}`
 }
+
+const modalOpen = document.querySelector('.modalPlayer');
+const modalClose = document.querySelector('.modalPlayer');
+
+document.querySelector('.openModal').addEventListener('click', () => {
+    modalOpen.style.display = 'block';
+
+})
+
+document.querySelector('.closeModal').addEventListener('click', () => {
+    modalClose.style.display = 'none';
+
+})
+
+document.querySelector('.btn-repeat-on').addEventListener('click', repetirMusicaON);
+document.querySelector('.btn-repeat-off').addEventListener('click', repetirMusicaOFF);
+
+function repetirMusicaON() {
+    musics.loop = true;
+    document.querySelector('.btn-repeat-on').style.display = 'none';
+    document.querySelector('.btn-repeat-off').style.display = 'block';
+
+}
+
+function repetirMusicaOFF() {
+    musics.loop = false;
+    document.querySelector('.btn-repeat-on').style.display = 'block';
+    document.querySelector('.btn-repeat-off').style.display = 'none';
+}
+
+
+
+// let musicModal = document.querySelector('.music img');
+// let ModalMusicName = document.querySelector('.descriptionMusic h3');
+// let ModalAlbum = document.querySelector('.descriptionMusic p');
+
+// function modalMusica(index) {
+//     music.addEventListener('loadeddata', () => {
+//         musicModal.src = musics[index].albumImg;
+//         ModalAlbum = musics[index].albumName;
+//         ModalMusicName = musics[index].title;
+//     })
+
+// }

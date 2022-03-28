@@ -1,5 +1,13 @@
 musics = [
     {
+        title: "君の街まで",
+        artist: "Asian Kung-Fu Generation",
+        albumName: "Sol-fa",
+        albumImg: "img/asian4.jpg",
+        img: "img/asian5.jpg",
+        file: "music/toYourTow.mp3"
+    },
+    {
         title: "アフターダーク",
         artist: "Asian Kung-Fu Generation",
         albumName: "World World World",
@@ -14,14 +22,7 @@ musics = [
         albumImg: "img/asian6.jpg",
         img: "img/asian2.jpg",
         file: "music/AFlowerNamedYou.mp3"
-    },
-    {
-        title: "君の街まで",
-        artist: "Asian Kung-Fu Generation",
-        albumName: "Sol-fa",
-        albumImg: "img/asian4.jpg",
-        img: "img/asian5.jpg",
-        file: "music/toYourTow.mp3"
     }
+
 
 ];
