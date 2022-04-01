@@ -13,6 +13,7 @@ var granimInstance = new Granim({
     }
 });
 
+
 // variasveis
 
 let music = document.querySelector('audio');
@@ -38,18 +39,25 @@ music.addEventListener('timeupdate', attBarra);
 
 document.querySelector('.arrow-left').addEventListener('click', () => {
     musicIndex--;
-    if (musicIndex < 0) {
-        musicIndex = 2;
-    }
+    // if (musicIndex < 0) {
+    //     musicIndex = 2;
+    // }
+
+    musicIndex < 0 ? musicIndex = musics.length : musicIndex = musicIndex;
     musicRender(musicIndex);
+    playMusic()
+    console.log(musicIndex);
 })
 
 document.querySelector('.arrow-right').addEventListener('click', () => {
     musicIndex++;
-    if (musicIndex > 2) {
-        musicIndex = 0;
-    }
+    // if (musicIndex > 2) {
+    //     musicIndex = 0;
+    // }
+    musicIndex > musics.length ? musicIndex = 0 : musicIndex = musicIndex;
     musicRender(musicIndex);
+    playMusic()
+    console.log(musicIndex);
 })
 
 //funçoes
@@ -62,8 +70,10 @@ function musicRender(index) {
         imgMusic.src = musics[index].img;
         albumImg.src = musics[index].albumImg;
         musicDuration.textContent = secondsForMinutes(Math.floor(music.duration));
-        attBarra()
-        pauseMusic()
+        attBarra();
+        // playMusic();
+        // pauseMusic();
+        platingNow();
     })
 }
 
@@ -95,6 +105,33 @@ function secondsForMinutes(s) {
     return `${boxMinutes}:${boxSeconds}`
 }
 
+let btnRepeat = document.querySelector('#btn-repeat');
+btnRepeat.addEventListener('click', () => {
+    let getColors = btnRepeat.innerText;
+
+    switch (getColors) {
+        case "repeat":
+            btnRepeat.innerText = "repeat_one";
+            btnRepeat.classList.add('btn-repeat-on');
+            music.loop = true;
+
+            break;
+        case "repeat_one":
+            btnRepeat.innerText = "repeat";
+            btnRepeat.classList.remove('btn-repeat-on');
+            music.loop = false;
+    }
+})
+
+let shuffle = document.querySelector('#shuffle');
+
+shuffle.addEventListener('click', () => {
+    musicIndex = Math.floor(Math.random() * musics.length);
+    musicRender(musicIndex);
+    playMusic();
+})
+
+
 const modalOpen = document.querySelector('.modalPlayer');
 const modalClose = document.querySelector('.modalPlayer');
 
@@ -108,33 +145,58 @@ document.querySelector('.closeModal').addEventListener('click', () => {
 
 })
 
-document.querySelector('.btn-repeat-on').addEventListener('click', repetirMusicaON);
-document.querySelector('.btn-repeat-off').addEventListener('click', repetirMusicaOFF);
+const musicList = document.querySelector(".music-scroll");
 
-function repetirMusicaON() {
-    music.loop = true;
-    document.querySelector('.btn-repeat-on').style.display = 'none';
-    document.querySelector('.btn-repeat-off').style.display = 'block';
+for (let i = 0; i < musics.length; i++) {
+    let musicBox =
+        `
+            <li li-index="${i}">
+                <div class="music-content">
+                    <div class="music">
+                        <span class="img-music">
+                            <img src="${musics[i].albumImg}" alt="">
+                        
+                        </span>
+                        <span class="descriptionMusic">
+                            <span>
+                                <h3>${musics[i].title}</h3>
+                                <p>${musics[i].artist}</p>
+                                <p>${musics[i].albumName}</p>
+                            </span>
+                            <span class="player">
+                                <i class="fa-solid fa-circle-play"></i>
+                            </span>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        `;
+    musicList.insertAdjacentHTML('beforeend', musicBox);
+
+    // let musicBoxTag = musicList.querySelector(".player i");
+
+    const allMusicBox = musicList.querySelectorAll("li");
+    function platingNow() {
+        for (let j = 0; j < allMusicBox.length; j++) {
+            if (allMusicBox[j].classList.contains("playing")) {
+                allMusicBox[j].classList.remove("playing");
+            }
+
+            if (allMusicBox[j].getAttribute("li-index") == musicIndex) {
+                allMusicBox[j].classList.add("playing");
+            }
+
+            allMusicBox[j].setAttribute("onclick", "clicked(this)");
+        }
+    }
+
+    function clicked(element) {
+        let getLiIndex = element.getAttribute("li-index");
+        musicIndex = getLiIndex;
+        musicRender(musicIndex);
+        playMusic();
+    }
 
 }
 
-function repetirMusicaOFF() {
-    music.loop = false;
-    document.querySelector('.btn-repeat-on').style.display = 'block';
-    document.querySelector('.btn-repeat-off').style.display = 'none';
-}
-
-
-
-// let musicModal = document.querySelector('.music img');
-// let ModalMusicName = document.querySelector('.descriptionMusic h3');
-// let ModalAlbum = document.querySelector('.descriptionMusic p');
-
-// function modalMusica(index) {
-//     music.addEventListener('loadeddata', () => {
-//         musicModal.src = musics[index].albumImg;
-//         ModalAlbum = musics[index].albumName;
-//         ModalMusicName = musics[index].title;
-//     })
-
-// }
+// <audio class="${musics[i].file}" src="music/${musics[i].src}.mp3"> 
