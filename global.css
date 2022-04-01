@@ -6,10 +6,10 @@
 
 
 
-    --text-shadow: 0.1em 0.1em 0.2em rgba(70, 70, 70, 0.597);
-    --box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.309);
-    --color-pink: rgba(255, 65, 149, 1);
-    --color-blue: #2196f3;
+    /* --text-shadow: 0.1em 0.1em 0.2em rgba(70, 70, 70, 0.597);
+    --box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.309); */
+    --color-pink: #1981d6;
+    --color-blue: #54aef6;
 }
 
 * {
@@ -228,7 +228,7 @@
 .main .playerHome .description .album-content .album .img-album-content .cd {
     border-radius: 0;
     position: absolute;
-    width: 58px;
+    width: 57px;
     height: 58px;
     z-index: 50;
     right: 0;
@@ -336,7 +336,7 @@
     background-color: var(--color-pink);
     border-radius: 50%;
     cursor: pointer;
-    box-shadow: var(--box-shadow);
+    /* box-shadow: var(--box-shadow); */
 }
 
 .main .playerHome .arrow {
@@ -368,8 +368,7 @@
 
 .modalPlayer .modal-sair {
     width: 100%;
-    background: rgb(240, 107, 120);
-
+    background: var(--color-pink);
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -407,15 +406,6 @@
     overflow-y: scroll;
 }
 
-.footer-scroll {
-    bottom: 0;
-    z-index: 1000;
-    position: fixed;
-    width: 100%;
-    height: 50px;
-    background: linear-gradient(0deg, rgba(50, 72, 102, 0.9), rgba(50, 72, 102, 0.837) 10%, rgba(0, 0, 0, 0.193) 70%, rgba(0, 0, 0, 0.001));
-}
-
 .modalPlayer .music-container .music {
     width: auto;
     height: 75px;
@@ -443,7 +433,7 @@
     width: 100%;
     height: 100%;
     padding: 5px 0px 5px 5px;
-    background: rgb(250, 156, 166);
+    background: var(--color-blue);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -494,7 +484,7 @@
 
 
 .btn-repeat-on {
-    color: var(--color-pink)
+    color: var(--color-pink);
 }
 
 .btn-repeat-off {
@@ -502,7 +492,7 @@
 }
 
 .music-container li.playing .music .descriptionMusic {
-    color: rgb(19, 19, 19);
+    color: rgb(32, 32, 32);
 }
 
 .hide {
@@ -512,4 +502,8 @@
 
 .visible {
     display: block;
+}
+
+.material-icons {
+    text-shadow: var(--text-shadow);
 }
