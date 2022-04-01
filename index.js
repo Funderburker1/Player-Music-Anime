@@ -1,23 +1,8 @@
-var granimInstance = new Granim({
-    element: '#canvas-basic',
-    direction: 'left-right',
-    isPausedWhenNotInView: true,
-    states: {
-        "default-state": {
-            gradients: [
-                ['#ff9966', '#ff5e62'],
-                ['#00F260', '#0575E6'],
-                ['#e1eec3', '#f05053']
-            ]
-        }
-    }
-});
-
 
 // variasveis
 
 let music = document.querySelector('audio');
-let musicIndex = 0;
+let musicIndex = Math.floor(Math.random() * musics.length);
 
 let btnPlay = document.querySelector('#btn-play');
 let btnPause = document.querySelector('#btn-pause');
@@ -173,8 +158,6 @@ for (let i = 0; i < musics.length; i++) {
         `;
     musicList.insertAdjacentHTML('beforeend', musicBox);
 
-    // let musicBoxTag = musicList.querySelector(".player i");
-
     const allMusicBox = musicList.querySelectorAll("li");
     function platingNow() {
         for (let j = 0; j < allMusicBox.length; j++) {
@@ -199,4 +182,46 @@ for (let i = 0; i < musics.length; i++) {
 
 }
 
-// <audio class="${musics[i].file}" src="music/${musics[i].src}.mp3"> 
+
+let options = document.querySelector("#opModalColors");
+let background = document.querySelector(".main");
+let modalColors = document.querySelector("#modalColors")
+let modalColorsTag = document.querySelectorAll("#modalColors li")
+
+options.addEventListener("click", () => {
+    let backColors = options.innerText;
+
+    switch (backColors) {
+        case "settings":
+            options.innerText = "close";
+            modalColors.classList.add("visible");
+            modalColors.classList.remove("hide");
+            break;
+        case "close":
+            options.innerText = "settings";
+            modalColors.classList.add("hide");
+            modalColors.classList.remove("visible");
+    }
+})
+
+modalColorsTag.forEach((e) => {
+    e.addEventListener("click", () => {
+        console.log(e);
+        let colors = modalColors.classList.add;
+
+        switch (colors) {
+            case "main":
+                modalColors.classList.add("backLinear1");
+                break;
+            case "backLinear1":
+
+                modalColors.classList.add("backLinear2");
+
+        }
+
+    })
+})
+
+
+
+

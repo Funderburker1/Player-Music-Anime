@@ -1,7 +1,15 @@
 :root {
+    --background-linear1: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    --background-linear2: linear-gradient(180deg, rgb(18, 146, 226) 0%, rgb(115, 13, 188) 80%);
+    --background-linear3: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
+    --background-linear4: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
+
+
+
     --text-shadow: 0.1em 0.1em 0.2em rgba(70, 70, 70, 0.597);
-    --box-shadow:  3px 2px 5px rgba(0, 0, 0, 0.309);
-    --color-pink: rgba(255,65,149,1);
+    --box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.309);
+    --color-pink: rgba(255, 65, 149, 1);
+    --color-blue: #2196f3;
 }
 
 * {
@@ -12,24 +20,41 @@
     list-style: none;
 }
 
+
 .main {
-    position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
-    background-color: red;
-    z-index: 1;
+
+    background: var(--background-linear2);
+    background-size: 300% 300%;
+    animation: colors 5s ease infinite;
 }
 
-.main #canvas-basic {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 5;
+/* .backLinear1 {
+
+    background: var(--background-linear4);
+    background-size: 300% 300%;
+    animation: colors 1s ease infinite;
+}
+
+.backLinear2 {
+    background: var(--background-linear1);
+    background-size: 300% 300%;
+    animation: colors 1s ease infinite;
+} */
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .main .playerHome {
@@ -37,17 +62,13 @@
     z-index: 50;
     width: 100%;
     height: 100vh;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-   
+
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-     /* background-color: blueviolet; */
+    /* background-color: blueviolet; */
 }
 
 .main .playerHome .like {
@@ -64,16 +85,41 @@
     justify-content: space-between;
 }
 
-.main .playerHome .like i {
+/* .main .playerHome .like i {
     opacity: 80%;
     font-size: 1.2rem;
     cursor: pointer;
+} */
+
+.main .playerHome #modalColors {
+    top: 40px;
+    right: 11px;
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    z-index: 500;
+
+    animation: top .6s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.main .playerHome #modalColors lu {
+    color: red;
+}
 
-.main .playerHome .like-off {
-   display: none;
-   color: red;
+@keyframes top {
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .main .playerHome .img {
@@ -92,21 +138,21 @@
     border-radius: 50%;
 }
 
-.multiple-borders1 {
+.gradiente {
     border-radius: 50%;
     position: relative;
     margin: 60px 0px 50px 0px;
-    box-shadow: 
-      0 0 0 8px rgba(255, 255, 255, 0.7), 
-      0 0 0 18px rgba(255, 255, 255, 0.5), 
-      0 0 0 30px rgba(255, 255, 255, 0.3),
-      0 0 0 45px rgba(255, 255, 255, 0.1);
+    box-shadow:
+        0 0 0 8px rgba(255, 255, 255, 0.7),
+        0 0 0 18px rgba(255, 255, 255, 0.5),
+        0 0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 0 43px rgba(255, 255, 255, 0.1);
 }
 
 .main .playerHome .description {
     width: 100%;
     margin-bottom: 1rem;
-   
+
     text-align: center;
     color: #fff;
 
@@ -131,7 +177,7 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
 
 .main .playerHome .description .album-content .album {
@@ -139,7 +185,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
 
 .main .playerHome .description .album p {
@@ -150,7 +196,7 @@
 
 .img-album-content {
     position: relative;
-    width:90px;
+    width: 90px;
     /* background-color:red; */
     display: flex;
     align-items: center;
@@ -167,7 +213,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:rgb(55, 55, 55);
+    background-color: rgb(55, 55, 55);
     padding: 2px 0px 2px 6px;
 }
 
@@ -185,20 +231,9 @@
     width: 58px;
     height: 58px;
     z-index: 50;
-    right:0;
+    right: 0;
     /* background-color:rgb(55, 54, 54) */
 }
-
-/* .multiple-borders2 {
-    border-radius: 50%;
-    position: relative;
-   
-    box-shadow: 
-      0 0 0 2px rgba(255, 255, 255, 0.7), 
-      0 0 0 4px rgba(255, 255, 255, 0.5), 
-      0 0 0 8px rgba(255, 255, 255, 0.3),
-      0 0 0 12px rgba(255, 255, 255, 0.1);
-} */
 
 .main .playerHome .barraProgressContent {
     /* background-color: blue; */
@@ -212,7 +247,7 @@
 .main .playerHome .barraProgressContent .barraProgress {
     width: 65%;
     height: 1px;
-    
+
     border-bottom: 1px solid rgba(255, 255, 255, 0.22);
 
     box-shadow: var(--box-shadow);
@@ -224,7 +259,7 @@
 .main .playerHome .barraProgressContent .barraProgress progress {
     width: 0%;
     height: 3px;
-    
+
     -webkit-appearance: none;
 }
 
@@ -252,11 +287,11 @@
     width: 100%;
     height: 2px;
     margin-top: 1rem;
-    
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .playerContent {
@@ -269,7 +304,7 @@
 .main .playerHome .playerContent .player {
     width: 100%;
     /* margin-top:2rem; */
-    
+
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -277,25 +312,27 @@
     /* background-color: red; */
 }
 
-.main .playerHome .player .fa-shuffle ,.fa-repeat {
+.main .playerHome .player .fa-shuffle,
+.fa-repeat {
     color: rgba(255, 255, 255, 0.659);
     text-shadow: var(--text-shadow);
 }
 
 .main .playerHome .player .icons-player {
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
     /* background-color: blue; */
     width: 35%;
 }
 
-.main .playerHome .player .btn-play, .btn-pause {
+.main .playerHome .player .btn-play,
+.btn-pause {
     text-align: center;
     width: 44px;
     padding: .9rem 0;
     font-size: .9rem;
-   
+
     background-color: var(--color-pink);
     border-radius: 50%;
     cursor: pointer;
@@ -308,8 +345,8 @@
     text-shadow: var(--text-shadow);
 }
 
-.main .playerHome .player .btn-pause  {
-   display: none;
+.main .playerHome .player .btn-pause {
+    display: none;
 }
 
 .modalPlayer {
@@ -319,14 +356,14 @@
     max-height: auto;
     min-height: 100vh;
     background: rgba(255, 255, 255, 0.446);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 3px );
-    -webkit-backdrop-filter: blur( 4px );
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 200;
 
     display: none;
 
-    animation: right 1.5s;
+    animation: right 1s;
 }
 
 .modalPlayer .modal-sair {
@@ -343,25 +380,25 @@
 
 .modalPlayer .modal-sair i {
     font-size: 1.2rem;
-    margin-right:3rem;
+    margin-right: 3rem;
 }
 
 .modalPlayer .music-container {
-    
+
     width: 100%;
     height: 100%;
     /* background-color:red; */
     padding: 15px 15px 0px 15px;
     display: flex;
     flex-direction: column;
-    
+
 }
 
 .modalPlayer .music-content {
     width: 100%;
     height: 100%;
     margin-bottom: 10px;
-    
+
 }
 
 .music-scroll {
@@ -376,7 +413,7 @@
     position: fixed;
     width: 100%;
     height: 50px;
-    background: linear-gradient(0deg,rgba(50, 72, 102, 0.9),rgba(50, 72, 102, 0.837) 10%,rgba(0, 0, 0, 0.193) 70%,rgba(0, 0, 0, 0.001));
+    background: linear-gradient(0deg, rgba(50, 72, 102, 0.9), rgba(50, 72, 102, 0.837) 10%, rgba(0, 0, 0, 0.193) 70%, rgba(0, 0, 0, 0.001));
 }
 
 .modalPlayer .music-container .music {
@@ -405,7 +442,7 @@
 .modalPlayer .music-container .music .descriptionMusic {
     width: 100%;
     height: 100%;
-    padding:  5px 0px 5px 5px;
+    padding: 5px 0px 5px 5px;
     background: rgb(250, 156, 166);
     display: flex;
     align-items: center;
@@ -448,7 +485,7 @@
 
     .main .playerHome {
         width: 45%;
-        height:85%;
+        height: 85%;
 
         border-radius: 30px;
         border: 3px solid #fff;
@@ -464,10 +501,15 @@
     color: #fff;
 }
 
-.music-container li.playing .music .descriptionMusic{
+.music-container li.playing .music .descriptionMusic {
     color: rgb(19, 19, 19);
 }
 
+.hide {
+    display: none !important;
+    background-color: red
+}
 
-
-
+.visible {
+    display: block;
+}
