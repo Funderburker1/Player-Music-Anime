@@ -183,44 +183,44 @@ for (let i = 0; i < musics.length; i++) {
 }
 
 
-let options = document.querySelector("#opModalColors");
-let background = document.querySelector(".main");
-let modalColors = document.querySelector("#modalColors")
-let modalColorsTag = document.querySelectorAll("#modalColors li")
+// let options = document.querySelector("#opModalColors");
+// let background = document.querySelector(".main");
+// let modalColors = document.querySelector("#modalColors")
+// let modalColorsTag = document.querySelectorAll("#modalColors li")
 
-options.addEventListener("click", () => {
-    let backColors = options.innerText;
+// options.addEventListener("click", () => {
+//     let backColors = options.innerText;
 
-    switch (backColors) {
-        case "settings":
-            options.innerText = "close";
-            modalColors.classList.add("visible");
-            modalColors.classList.remove("hide");
-            break;
-        case "close":
-            options.innerText = "settings";
-            modalColors.classList.add("hide");
-            modalColors.classList.remove("visible");
-    }
-})
+//     switch (backColors) {
+//         case "settings":
+//             options.innerText = "close";
+//             modalColors.classList.add("visible");
+//             modalColors.classList.remove("hide");
+//             break;
+//         case "close":
+//             options.innerText = "settings";
+//             modalColors.classList.add("hide");
+//             modalColors.classList.remove("visible");
+//     }
+// })
 
-modalColorsTag.forEach((e) => {
-    e.addEventListener("click", () => {
-        console.log(e);
-        let colors = modalColors.classList.add;
+// modalColorsTag.forEach((e) => {
+//     e.addEventListener("click", () => {
+//         console.log(e);
+//         let colors = modalColors.classList.add;
 
-        switch (colors) {
-            case "main":
-                modalColors.classList.add("backLinear1");
-                break;
-            case "backLinear1":
+//         switch (colors) {
+//             case "main":
+//                 modalColors.classList.add("backLinear1");
+//                 break;
+//             case "backLinear1":
 
-                modalColors.classList.add("backLinear2");
+//                 modalColors.classList.add("backLinear2");
 
-        }
+//         }
 
-    })
-})
+//     })
+// })
 
 
 
