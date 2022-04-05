@@ -470,6 +470,7 @@
 
 .music-container li.playing .music .descriptionMusic {
     color: rgb(32, 32, 32);
+    background: var(--color-pink);
 }
 
 .hide {
