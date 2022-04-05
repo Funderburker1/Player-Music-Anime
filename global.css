@@ -423,7 +423,13 @@
     justify-content: space-between;
     color: white;
     /* text-align: center; */
+    transition: all 0.5s;
+}
+
+.modalPlayer .music-container .music .descriptionMusic:hover {
     cursor: pointer;
+    background: var(--color-pink);
+    transition: all 0.5s;
 }
 
 .modalPlayer .music-container .music .descriptionMusic h3 {
