@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -17,34 +17,34 @@
 
 <body>
     <main class="main">
-        <!-- <canvas id="canvas-basic"></canvas> -->
         <canvas id="canvas-basic"></canvas>
         <section class="playerHome">
             <div class="like">
                 <i class="material-icons openModal">queue_music</i>
                 <!-- <i id="opModalColors" class="material-icons">settings</i> -->
             </div>
-            <div id="modalColors" class="hide">
+            <!-- <div id="modalColors" class="hide">
                 <ul>
                     <li>1</li>
                     <li>2</li>
                     <li>3</li>
                 </ul>
-            </div>
+            </div> -->
             <div class="img gradiente">
-                <img src="img/asian1.jpg" alt="">
+                <img src="" alt="imagem da musica" onerror="this.src='https://via.placeholder.com/300.png'">
             </div>
             <div class="description">
-                <h3>崩壊アンプリファー</h3>
-                <p>アジアのカンフー世代</p>
+                <h3></h3>
+                <p></p>
                 <div class="album-content">
                     <span class="album">
-                        <p>Album</p>
+                        <p></p>
 
                         <div class="img-album-content">
                             <div class="img-album multiple-borders2">
 
-                                <img src="img/asian2.jpg" alt="">
+                                <img src="" alt="imagem do album"
+                                    onerror="this.src='https://via.placeholder.com/300.png'">
                             </div>
                             <img class="cd" src="img/cd1.svg" alt="">
                         </div>
@@ -52,33 +52,34 @@
                 </div>
             </div>
             <div class="barraProgressContent">
-                <div class="time" id="time-initial">00:00</div>
+                <div class="time" id="time-initial" alt="tempo inicial da musica">00:00</div>
                 <div class="barraProgress">
-                    <progress value="0" max="1"></progress>
+                    <progress value="0" max="1" alt="barra de progresso da musica"></progress>
                     <div class="ponto"></div>
                 </div>
-                <div class="time" id="time-end">00:00</div>
+                <div class="time" id="time-end" alt="tempo final da musica">00:00</div>
             </div>
 
             <span class="row"></span>
 
             <div class="playerContent">
                 <div class="player">
-                    <i id="shuffle" class="material-icons">shuffle</i>
+                    <i id="shuffle" class="material-icons" alt="botão para musica aleatoria">shuffle</i>
                     <span class="icons-player">
-                        <i class="fa-solid fa-backward-step arrow arrow-left"></i>
-                        <i class="fa-solid fa-play btn-play" id="btn-play"></i>
-                        <i class="fa-solid fa-pause btn-pause" id="btn-pause"></i>
-                        <i class="fa-solid fa-forward-step arrow arrow-right"></i>
+                        <i class="fa-solid fa-backward-step arrow arrow-left"
+                            alt="botão para ir para a proxima musica"></i>
+                        <i class="fa-solid fa-play btn-play" id="btn-play" alt="botão para dar play na musica"></i>
+                        <i class="fa-solid fa-pause btn-pause" id="btn-pause" alt="botão para dar pause na musica"></i>
+                        <i class="fa-solid fa-forward-step arrow arrow-right" alt="botão para voltar a musica"></i>
                     </span>
-                    <i id="btn-repeat" class="material-icons">repeat</i>
+                    <i id="btn-repeat" class="material-icons" alt="botão para repetir a musica">repeat</i>
                     <!-- <i class="fa-solid fa-repeat btn-repeat-off"></i> -->
                 </div>
             </div>
             <audio src=""></audio>
             <div class="modalPlayer">
-                <div class="modal-sair">
-                    <i class="fa-solid fa-xmark closeModal"></i>
+                <div class="modal-sair" alt="botão para sair da sua play list">
+                    <i class="fa-solid fa-xmark closeModal" alt="botão para fechar a sua play list"></i>
                     <!-- <i class="fa-solid fa-angle-left closeModal"></i> -->
                     <h3>Sua Coleção de Musicas</h3>
                 </div>
