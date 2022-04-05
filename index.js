@@ -1,4 +1,21 @@
 
+var granimInstance = new Granim({
+
+    element: '#canvas-basic',
+    direction: 'left-right',
+    isPausedWhenNotInView: true,
+    states: {
+        "default-state": {
+            gradients: [
+                ['#ff9966', '#ff5e62'],
+                ['#54aef6', '#0575E6']
+            ]
+        }
+    }
+}
+
+);
+
 // variasveis
 
 let music = document.querySelector('audio');
