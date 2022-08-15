@@ -62,6 +62,19 @@ document.querySelector('.arrow-right').addEventListener('click', () => {
     console.log(musicIndex);
 })
 
+function proximaMusica() {
+
+    if (music.duration == music.currentTime) {
+        console.log("proximo")
+        musicIndex++;
+        // if (musicIndex > 2) {
+        //     musicIndex = 0;
+        // }
+        musicRender(musicIndex);
+
+    }
+}
+
 //funçoes
 function musicRender(index) {
     music.setAttribute('src', musics[index].file);
@@ -72,12 +85,13 @@ function musicRender(index) {
         imgMusic.src = musics[index].img;
         albumImg.src = musics[index].albumImg;
         musicDuration.textContent = secondsForMinutes(Math.floor(music.duration));
-        attBarra();
-        // playMusic();
-        // pauseMusic();
-        platingNow();
+
+        playingNow();
+
     })
 }
+
+
 
 function playMusic() {
     music.play();
@@ -95,6 +109,7 @@ function attBarra() {
     barra.style.width = Math.floor((music.currentTime / music.duration) * 100) + '%';
     let decurrentTime = document.querySelector('#time-initial');
     decurrentTime.textContent = secondsForMinutes(Math.floor(music.currentTime));
+    proximaMusica()
 }
 
 function secondsForMinutes(s) {
@@ -176,7 +191,7 @@ for (let i = 0; i < musics.length; i++) {
     musicList.insertAdjacentHTML('beforeend', musicBox);
 
     const allMusicBox = musicList.querySelectorAll("li");
-    function platingNow() {
+    function playingNow() {
         for (let j = 0; j < allMusicBox.length; j++) {
             if (allMusicBox[j].classList.contains("playing")) {
                 allMusicBox[j].classList.remove("playing");

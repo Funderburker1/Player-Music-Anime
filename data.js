@@ -95,6 +95,15 @@ musics = [
         img: "img/asian20.jpg",
         file: "music/KANA-BOON _ SILHOUETTE.mp3"
     },
+
+    {
+        title: "aaa",
+        artist: "bbbbb",
+        albumName: "zzzz",
+        albumImg: "img/asian4.jpg",
+        img: "img/asian5.jpg",
+        file: "music/erou.mp3"
+    },
 ];
 
 
