@@ -4,10 +4,6 @@
     --background-linear3: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
     --background-linear4: linear-gradient(132deg, #F4D03F 0%, #16A085 100%);
 
-
-
-    /* --text-shadow: 0.1em 0.1em 0.2em rgba(70, 70, 70, 0.597);
-    --box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.309); */
     --color-pink: #1981d6;
     --color-blue: #54aef6;
 }
@@ -50,19 +46,15 @@ html ::-webkit-scrollbar-track {
     display: block;
     width: 100%;
     height: 100%;
-    max-height: 625px;
+    max-height: 665px;
     max-width: 425px;
     height: 100vh;
-    /* top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0; */
 }
 
 .main .playerHome {
     width: 100%;
     height: 100%;
-    max-height: 625px;
+    max-height: 665px;
     max-width: 425px;
     position: relative;
     z-index: 50;
@@ -325,7 +317,7 @@ html ::-webkit-scrollbar-track {
     position: absolute;
     width: 100%;
     height: 100%;
-    max-height: 585px;
+    max-height: 94%;
     max-width: 425px;
     z-index: 200;
 
@@ -485,6 +477,26 @@ html ::-webkit-scrollbar-track {
 
     .modalPlayer {
         animation: right 1s;
-        max-height: 100%;
+        max-height: 94%;
     }
 }
+
+/* .volume {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.volume .aumentarVolume {
+    display: block;
+    cursor: pointer;
+    background-color: blue;
+}
+
+.volume .diminuirVolume {
+    display: block;
+    cursor: pointer;
+    background-color: pink;
+} */

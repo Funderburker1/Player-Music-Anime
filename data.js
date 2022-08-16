@@ -1,11 +1,11 @@
-musics = [
+musicsJson = [
     {
         title: "君の街まで",
         artist: "Asian Kung-Fu Generation",
         albumName: "Sol-fa",
         albumImg: "img/asian4.jpg",
         img: "img/asian5.jpg",
-        file: "music/toYourTow.mp3"
+        srcMusic: "music/toYourTow.mp3"
     },
     {
         title: "アフターダーク",
@@ -13,7 +13,7 @@ musics = [
         albumName: "World World World",
         albumImg: "img/asian7.jpg",
         img: "img/asian3.jpg",
-        file: "music/afterDark.mp3"
+        srcMusic: "music/afterDark.mp3"
     },
     {
         title: "君という花",
@@ -21,7 +21,7 @@ musics = [
         albumName: "Kimi Tsunagi Five M",
         albumImg: "img/asian6.jpg",
         img: "img/asian2.jpg",
-        file: "music/AFlowerNamedYou.mp3"
+        srcMusic: "music/AFlowerNamedYou.mp3"
     },
     {
         title: "心海",
@@ -29,7 +29,7 @@ musics = [
         albumName: "Kaikai Kitan / Ao no Waltz",
         albumImg: "img/asian8.webp",
         img: "img/asian19.jpg",
-        file: "music/心海 - Eve MV.mp3"
+        srcMusic: "music/心海 - Eve MV.mp3"
     },
     {
         title: "廻廻奇譚",
@@ -37,7 +37,7 @@ musics = [
         albumName: "Kaikai Kitan / Ao no Waltz",
         albumImg: "img/asian8.webp",
         img: "img/asian22.jpg",
-        file: "music/Eve MV.mp3"
+        srcMusic: "music/Eve MV.mp3"
     },
     {
         title: "中文歌词付",
@@ -45,7 +45,7 @@ musics = [
         albumName: "Kaizin",
         albumImg: "img/asian9.jpg",
         img: "img/asian10.jpg",
-        file: "music/YOKU - Eve MV.mp3"
+        srcMusic: "music/YOKU - Eve MV.mp3"
     },
     {
         title: "言って",
@@ -53,7 +53,7 @@ musics = [
         albumName: "Kaizin",
         albumImg: "img/asian11.jpg",
         img: "img/asian12.jpg",
-        file: "music/ヨルシカ - 言って.mp3"
+        srcMusic: "music/ヨルシカ - 言って.mp3"
     },
     {
         title: "ライラック",
@@ -61,7 +61,7 @@ musics = [
         albumName: "カワキヲアメク",
         albumImg: "img/asian13.jpg",
         img: "img/asian14.jpg",
-        file: "music/美波-ライラック.mp3"
+        srcMusic: "music/美波-ライラック.mp3"
     },
     {
         title: "青い栞",
@@ -69,7 +69,7 @@ musics = [
         albumName: "Portal",
         albumImg: "img/asian15.jpg",
         img: "img/asian16.jpg",
-        file: "music/Galileo Galilei Aoi Shiori.mp3"
+        srcMusic: "music/Galileo Galilei Aoi Shiori.mp3"
     },
     {
         title: "Imaginary Friends",
@@ -77,7 +77,7 @@ musics = [
         albumName: "Portal",
         albumImg: "img/asian15.jpg",
         img: "img/asian15.jpg",
-        file: "music/Imaginary Friends.mp3"
+        srcMusic: "music/Imaginary Friends.mp3"
     },
     {
         title: "Banana Fish to Hamabe to Kuroi Niji",
@@ -85,7 +85,7 @@ musics = [
         albumName: "See More Glass",
         albumImg: "img/asian17.webp",
         img: "img/asian18.jpg",
-        file: "music/Bananafish.mp3"
+        srcMusic: "music/Bananafish.mp3"
     },
     {
         title: "シルエット",
@@ -93,17 +93,17 @@ musics = [
         albumName: "Time",
         albumImg: "img/asian21.jpg",
         img: "img/asian20.jpg",
-        file: "music/KANA-BOON _ SILHOUETTE.mp3"
+        srcMusic: "music/KANA-BOON _ SILHOUETTE.mp3"
     },
 
-    {
-        title: "aaa",
-        artist: "bbbbb",
-        albumName: "zzzz",
-        albumImg: "img/asian4.jpg",
-        img: "img/asian5.jpg",
-        file: "music/erou.mp3"
-    },
+    // {
+    //     title: "aaa",
+    //     artist: "bbbbb",
+    //     albumName: "zzzz",
+    //     albumImg: "img/asian4.jpg",
+    //     img: "img/asian5.jpg",
+    //     srcMusic: "music/erou.mp3"
+    // },
 ];
 
 

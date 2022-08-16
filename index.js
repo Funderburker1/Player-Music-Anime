@@ -1,4 +1,3 @@
-
 var granimInstance = new Granim({
 
     element: '#canvas-basic',
@@ -19,7 +18,7 @@ var granimInstance = new Granim({
 // variasveis
 
 let music = document.querySelector('audio');
-let musicIndex = Math.floor(Math.random() * musics.length);
+let musicIndex = Math.floor(Math.random() * musicsJson.length);
 
 let btnPlay = document.querySelector('#btn-play');
 let btnPause = document.querySelector('#btn-pause');
@@ -41,11 +40,11 @@ music.addEventListener('timeupdate', attBarra);
 
 document.querySelector('.arrow-left').addEventListener('click', () => {
     musicIndex--;
-    // if (musicIndex < 0) {
-    //     musicIndex = 2;
-    // }
+    if (musicIndex < 0) {
+        musicIndex = 2;
+    }
 
-    musicIndex < 0 ? musicIndex = musics.length : musicIndex = musicIndex;
+    // musicIndex < 0 ? musicIndex = musicsJson.length : musicIndex = musicIndex;
     musicRender(musicIndex);
     playMusic()
     console.log(musicIndex);
@@ -53,10 +52,10 @@ document.querySelector('.arrow-left').addEventListener('click', () => {
 
 document.querySelector('.arrow-right').addEventListener('click', () => {
     musicIndex++;
-    // if (musicIndex > 2) {
-    //     musicIndex = 0;
-    // }
-    musicIndex > musics.length ? musicIndex = 0 : musicIndex = musicIndex;
+    if (musicIndex > 2) {
+        musicIndex = 0;
+    }
+    // musicIndex > musicsJson.length ? musicIndex = 0 : musicIndex = musicIndex;
     musicRender(musicIndex);
     playMusic()
     console.log(musicIndex);
@@ -77,21 +76,19 @@ function proximaMusica() {
 
 //funçoes
 function musicRender(index) {
-    music.setAttribute('src', musics[index].file);
+    music.setAttribute('src', musicsJson[index].srcMusic);
     music.addEventListener('loadeddata', () => {
-        musicName.textContent = musics[index].title;
-        artistName.textContent = musics[index].artist;
-        albumName.textContent = musics[index].albumName;
-        imgMusic.src = musics[index].img;
-        albumImg.src = musics[index].albumImg;
+        musicName.textContent = musicsJson[index].title;
+        artistName.textContent = musicsJson[index].artist;
+        albumName.textContent = musicsJson[index].albumName;
+        imgMusic.src = musicsJson[index].img;
+        albumImg.src = musicsJson[index].albumImg;
         musicDuration.textContent = secondsForMinutes(Math.floor(music.duration));
 
         playingNow();
 
     })
 }
-
-
 
 function playMusic() {
     music.play();
@@ -143,7 +140,7 @@ btnRepeat.addEventListener('click', () => {
 let shuffle = document.querySelector('#shuffle');
 
 shuffle.addEventListener('click', () => {
-    musicIndex = Math.floor(Math.random() * musics.length);
+    musicIndex = Math.floor(Math.random() * musicsJson.length);
     musicRender(musicIndex);
     playMusic();
 })
@@ -164,21 +161,21 @@ document.querySelector('.closeModal').addEventListener('click', () => {
 
 const musicList = document.querySelector(".music-scroll");
 
-for (let i = 0; i < musics.length; i++) {
+for (let i = 0; i < musicsJson.length; i++) {
     let musicBox =
         `
             <li li-index="${i}">
                 <div class="music-content">
                     <div class="music">
                         <span class="img-music">
-                            <img src="${musics[i].albumImg}" alt="">
+                            <img src="${musicsJson[i].albumImg}" alt="">
                         
                         </span>
                         <span class="descriptionMusic">
                             <span>
-                                <h3>${musics[i].title}</h3>
-                                <p>${musics[i].artist}</p>
-                                <p>${musics[i].albumName}</p>
+                                <h3>${musicsJson[i].title}</h3>
+                                <p>${musicsJson[i].artist}</p>
+                                <p>${musicsJson[i].albumName}</p>
                             </span>
                             <span class="player">
                                 <i class="fa-solid fa-circle-play"></i>
@@ -215,44 +212,18 @@ for (let i = 0; i < musics.length; i++) {
 }
 
 
-// let options = document.querySelector("#opModalColors");
-// let background = document.querySelector(".main");
-// let modalColors = document.querySelector("#modalColors")
-// let modalColorsTag = document.querySelectorAll("#modalColors li")
+// document.querySelector('.aumentarVolume').addEventListener('click', aumentar_volume);
+// document.querySelector('.diminuirVolume').addEventListener('click', diminuir_volume);
 
-// options.addEventListener("click", () => {
-//     let backColors = options.innerText;
 
-//     switch (backColors) {
-//         case "settings":
-//             options.innerText = "close";
-//             modalColors.classList.add("visible");
-//             modalColors.classList.remove("hide");
-//             break;
-//         case "close":
-//             options.innerText = "settings";
-//             modalColors.classList.add("hide");
-//             modalColors.classList.remove("visible");
-//     }
-// })
+// function aumentar_volume() {
+//     if (music.volume < 1) music.volume += 0.1;
+// }
 
-// modalColorsTag.forEach((e) => {
-//     e.addEventListener("click", () => {
-//         console.log(e);
-//         let colors = modalColors.classList.add;
+// function diminuir_volume() {
+//     if (music.volume > 0) music.volume -= 0.1;
+// }
 
-//         switch (colors) {
-//             case "main":
-//                 modalColors.classList.add("backLinear1");
-//                 break;
-//             case "backLinear1":
-
-//                 modalColors.classList.add("backLinear2");
-
-//         }
-
-//     })
-// })
 
 
 
